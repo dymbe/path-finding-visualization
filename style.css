@@ -1,0 +1,120 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+}
+
+row {
+    display: flex;
+}
+
+dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+buttons {
+    display: block;
+    margin-bottom: 50px;
+}
+
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin: 10px 10px;
+}
+
+button:hover {background-color: #3e8e41}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+radio-group {
+    display: block;
+
+}
+
+.dot {
+    background-color: lightgray;
+}
+
+.hash {
+    background-color: black;
+}
+
+.a {
+    background-color: red;
+}
+
+.b {
+    background-color: gold;
+}
+
+.w {
+    background-color: blue;
+}
+
+.m {
+    background-color: gray;
+}
+
+.f {
+    background-color: darkgreen;
+}
+
+.g {
+    background-color: lightgreen;
+}
+
+.r {
+    background-color: sandybrown;
+}
+
+.dot.closed {
+    background-color: lightblue;
+}
+
+.dot.open {
+    background-color: lightcyan;
+}
+
+.w.closed:before, .m.closed:before, .f.closed:before, .g.closed:before, .r.closed:before {
+    content: "◦"
+}
+
+.w.open:before, .m.open:before, .f.open:before, .g.open:before, .r.open:before {
+    content: "-"
+}
+
+.dot.path {
+    background-color: green;
+}
+
+.w.path:before, .m.path:before, .f.path:before, .g.path:before, .r.path:before {
+    content: "•" !important;
+}
