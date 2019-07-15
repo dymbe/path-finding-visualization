@@ -1,4 +1,4 @@
 # path-finding-visualization
-Open the index.html file your browser to see A*, Dijkstra, and BFS in action.
+A very hacky solution to an assignment at NTNU. Pretty crappy code, but it was fun to make.
 
-Currently not optimized (has some bugs), but fun to watch
+View it in-action at https://dymbe.github.io/path-finding-visualization/
