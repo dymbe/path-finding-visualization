@@ -48,49 +48,6 @@ const tileWeights = {
     "r": 1
 };
 
-function dashboard() {
-    const dashboard = document.createElement("dashboard");
-    const buttons = document.createElement("buttons");
-    for (let i = 0; i < rawBoardStrings.length; i++) {
-        const button = document.createElement("button");
-        button.appendChild(document.createTextNode("Button " + (i+1)));
-        button.onclick = () => {
-            init(rawBoardStrings[i]);
-            searchFrom(startTile);
-        };
-        buttons.appendChild(button);
-    }
-    dashboard.appendChild(buttons);
-
-    const radioGroup = document.createElement("radio-group");
-
-    const radioButton1 = document.createElement("input");
-    radioButton1.type = "radio";
-    radioButton1.name = "algorithm";
-    radioButton1.checked = "checked";
-    radioButton1.onclick = () => algorithm = "A*";
-    radioGroup.appendChild(radioButton1);
-    radioGroup.appendChild(document.createTextNode("A*"));
-
-    const radioButton2 = document.createElement("input");
-    radioButton2.type = "radio";
-    radioButton2.name = "algorithm";
-    radioButton2.onclick = () => algorithm = "Dijkstra";
-    radioGroup.appendChild(radioButton2);
-    radioGroup.appendChild(document.createTextNode("Dijkstra"));
-
-    const radioButton3 = document.createElement("input");
-    radioButton3.type = "radio";
-    radioButton3.name = "algorithm";
-    radioButton3.onclick = () => algorithm = "BFS";
-    radioGroup.appendChild(radioButton3);
-    radioGroup.appendChild(document.createTextNode("BFS"));
-
-    dashboard.appendChild(radioGroup);
-
-    return dashboard
-}
-
 // Initializes the grid inside the browser
 function init(rawBoard) {
     clear();
@@ -200,4 +157,48 @@ function getAdjacent(tile) {
     adjacent.push(getTile(tile.row - 1, tile.col, tile));
     adjacent.push(getTile(tile.row + 1, tile.col, tile));
     return adjacent;
+}
+
+// Creates a dashboard for selecting algorithm and board
+function dashboard() {
+    const dashboard = document.createElement("dashboard");
+    const buttons = document.createElement("buttons");
+    for (let i = 0; i < rawBoardStrings.length; i++) {
+        const button = document.createElement("button");
+        button.appendChild(document.createTextNode("Board " + (i+1)));
+        button.onclick = () => {
+            init(rawBoardStrings[i]);
+            searchFrom(startTile);
+        };
+        buttons.appendChild(button);
+    }
+    dashboard.appendChild(buttons);
+
+    const radioGroup = document.createElement("radio-group");
+
+    const radioButton1 = document.createElement("input");
+    radioButton1.type = "radio";
+    radioButton1.name = "algorithm";
+    radioButton1.checked = "checked";
+    radioButton1.onclick = () => algorithm = "A*";
+    radioGroup.appendChild(radioButton1);
+    radioGroup.appendChild(document.createTextNode("A*"));
+
+    const radioButton2 = document.createElement("input");
+    radioButton2.type = "radio";
+    radioButton2.name = "algorithm";
+    radioButton2.onclick = () => algorithm = "Dijkstra";
+    radioGroup.appendChild(radioButton2);
+    radioGroup.appendChild(document.createTextNode("Dijkstra"));
+
+    const radioButton3 = document.createElement("input");
+    radioButton3.type = "radio";
+    radioButton3.name = "algorithm";
+    radioButton3.onclick = () => algorithm = "BFS";
+    radioGroup.appendChild(radioButton3);
+    radioGroup.appendChild(document.createTextNode("BFS"));
+
+    dashboard.appendChild(radioGroup);
+
+    return dashboard
 }
